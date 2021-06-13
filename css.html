@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		:root{
+
+			--white 	: #D4E4F7;
+			--yellow 	: #FC7307;
+			--blue 		: #236AB9;
+			--red 		: #B85B14;
+			--black 	: #341C09;
+
+			--white-light	: #FFFFFF;
+			--yellow-light	: #FDA968;
+			--blue-light	: #5494DE;
+			--red-light		: #EB8E47;
+			--black-light	: #6C3B13;
+
+			--size-sm	: 11px;
+			--size-m	: 14px;
+			--size-l	: 18px;
+			--size-xl	: 22px;
+
+			--width-sm	: 360px;
+			--width-m	: 480px;
+			--width-l	: 720px;
+			--width-xl	: 1024px;
+
+			--default-padding: 4px;
+
+		}
+
+		/*all*/
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+			font-size: var(--size-m);
+		}
+
+		/*global*/
+		.icon{
+			color: var(--white-light);
+		}
+
+		.float-container:after{
+			clear: both;
+			content: '';
+			display: table;
+		}
+
+		.block{
+			padding: calc(var(--default-padding)*4);
+			margin: calc(var(--default-padding)*1.5);
+			border-radius: var(--default-padding);
+			box-shadow: 0px 0px var(--default-padding);
+			position: relative;
+			float: left;
+		}
+
+		.section{
+			padding: calc(var(--default-padding)*5);
+			min-height: 30vh;
+			position: relative;
+		}
+
+		.btn{
+			display: inline-block;
+			padding: calc(var(--default-padding)) calc(var(--default-padding) * 2);
+			margin: calc(var(--default-padding)) calc(var(--default-padding) * 2);
+			border-radius: calc(var(--default-padding)/2);
+			box-shadow: 0px 0px var(--default-padding);
+			background: var(--white-light);
+			transition: background .4s;
+			cursor: pointer;
+			outline: none;
+		}
+
+		.btn:hover{
+			background: var(--white);
+		}
+
+		/*color*/
+		.c-white{
+			color: var(--white);
+		}
+		.c-blue{
+			color: var(--blue);
+		}
+		.c-yellow{
+			color: var(--yellow);
+		}
+		.c-red{
+			color: var(--red);
+		}
+		.c-black{
+			color: var(--black);
+		}
+		.c-white-light{
+			color: var(--white-light);
+		}
+		.c-blue-light{
+			color: var(--blue-light);
+		}
+		.c-red-light{
+			color: var(--red-light);
+		}
+		.c-black-light{
+			color: var(--black-light);
+		}
+
+		/*background*/
+		.bg-white{
+			background: var(--white);
+		}
+		.bg-blue{
+			background: var(--blue);
+		}
+		.bg-yellow{
+			background: var(--yellow);
+		}
+		.bg-red{
+			background: var(--red);
+		}
+		.bg-black{
+			background: var(--black);
+		}
+		.bg-white-light{
+			background: var(--white-light);
+		}
+		.bg-blue-light{
+			background: var(--blue-light);
+		}
+		.bg-red-light{
+			background: var(--red-light);
+		}
+		.bg-black-light{
+			background: var(--black-light);
+		}
+
+		/*block*/
+		.white{
+			background: var(--white-light);
+			color: var(--black);
+		}
+
+		.white .icon{
+			color: var(--red-color);
+		}
+
+		.red{
+			background: var(--red);
+			color: var(--white);
+		}
+
+		.yellow{
+			background: var(--yellow);
+			color: var(--blue);
+		}
+
+		.black{
+			background: var(--black);
+			color: var(--blue-light);
+		}
+
+		.blue{
+			background: var(--blue);
+			color: var(--yellow);
+		}
+
+		.blue-light{
+			background: var(--blue-light);
+			color: var(--yellow-light);
+		}
+
+		/*padding*/
+		.padding-0{
+			padding: 0px;
+		}
+		.padding-sm{
+			padding: calc(var(--default-padding)) calc(var(--default-padding) * 2);
+		}
+		.padding-m{
+			padding: calc(var(--default-padding) * 1.5) calc(var(--default-padding) * 3);
+		}
+		.padding-l{
+			padding: calc(var(--default-padding) * 2) calc(var(--default-padding) * 4);
+		}
+		.padding-xl{
+			padding: calc(var(--default-padding) * 3) calc(var(--default-padding) * 5);
+		}
+
+		/*margin*/
+		.margin-0{
+			margin: 0px;
+		}
+		.margin-sm{
+			margin: calc(var(--default-padding)) calc(var(--default-padding) * 2);
+		}
+		.margin-m{
+			margin: calc(var(--default-padding) * 1.5) calc(var(--default-padding) * 3);
+		}
+		.margin-l{
+			margin: calc(var(--default-padding) * 2) calc(var(--default-padding) * 4);
+		}
+		.margin-xl{
+			margin: calc(var(--default-padding) * 3) calc(var(--default-padding) * 6);
+		}
+
+		/*radius*/
+		.radius-sm{
+			border-radius: calc(var(--default-padding)/2);
+		}
+		.radius-m{
+			border-radius: calc(var(--default-padding));
+		}
+		.radius-l{
+			border-radius: calc(var(--default-padding)*2);
+		}
+		.radius-xl{
+			border-radius: calc(var(--default-padding)*4);
+		}
+
+		/*font size*/
+		.size-sm{
+			font-size: var(--size-sm);
+		}
+		.size-m{
+			font-size: var(--size-m);
+		}
+		.size-l{
+			font-size: var(--size-l);
+		}
+		.size-xl{
+			font-size: var(--size-xl);
+		}
+
+		/*width*/
+		.width-sm{
+			max-width: var(--width-sm);
+		}
+		.width-m{
+			max-width: var(--width-m);
+		}
+		.width-l{
+			max-width: var(--width-l);
+		}
+		.width-xl{
+			max-width: var(--width-xl);
+		}
+
+		/*text-clamp*/
+		.clamp{
+		  display: -webkit-box;
+		  -webkit-box-orient: vertical;  
+		  overflow: hidden;
+		}
+		.clamp-1 {
+		  -webkit-line-clamp: 1;
+		}
+		.clamp-2 {
+		  -webkit-line-clamp: 2;
+		}
+		.clamp-3 {
+		  -webkit-line-clamp: 3;
+		}
+	</style>
+</head>
+<body>
+	
+	<section class="section blue-light width-sm">
+		<label class="c-white size-xl">Trang chủ</label>
+		<div class="btn padding-m bg-blue c-white-light">Đăng nhập</div>
+		<p class="clamp clamp-1">Cộng hòa xã hội chủ nghĩa việt nam độc lập tự do hạnh phúc đơn xin nghĩ học. tôi tên là đinh thanh huy hôm nay ngày 13 tháng 3 2019 xin được nghĩ học 1 ngày vì đang bệnh</p>
+	</section>
+	<section class="red">fsdf</section>
+	<div class="float-container">
+		<div class="block yellow">
+			dfsdfdsf
+		</div>
+	</div>
+	<div>dfssdfd</div>
+
+</body>
+</html>
